@@ -23,17 +23,19 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
   </script>
-<meta name="description" content="#🎉️ 🎉️">
+<meta name="description" content="markdown 语法总结基本符号如果以基本符号* - +. &gt;开头的标记，注意基本符号后有一个用于分割标记符和内容的空格。 标题h1-h6 列表 1 2 3    a b c  引用 引用1  引用2   代码块print(&quot;%s&quot;,&quot;sss&quot;) 12for i &#x3D; a[1:12:1]		print(i)  链接百度,行内式 图片 分割线">
 <meta property="og:type" content="article">
 <meta property="og:title" content="first blog">
 <meta property="og:url" content="http://example.com/2021/04/06/first-blog/index.html">
 <meta property="og:site_name" content="william的小屋">
-<meta property="og:description" content="#🎉️ 🎉️">
+<meta property="og:description" content="markdown 语法总结基本符号如果以基本符号* - +. &gt;开头的标记，注意基本符号后有一个用于分割标记符和内容的空格。 标题h1-h6 列表 1 2 3    a b c  引用 引用1  引用2   代码块print(&quot;%s&quot;,&quot;sss&quot;) 12for i &#x3D; a[1:12:1]		print(i)  链接百度,行内式 图片 分割线">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/img_convert/ff5865a008004b32e8406d3d2a293eaf.png">
 <meta property="article:published_time" content="2021-04-06T14:47:51.000Z">
-<meta property="article:modified_time" content="2021-04-06T14:54:32.184Z">
+<meta property="article:modified_time" content="2021-04-08T13:14:47.703Z">
 <meta property="article:author" content="william(wjw)">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/img_convert/ff5865a008004b32e8406d3d2a293eaf.png">
 
 
 <link rel="canonical" href="http://example.com/2021/04/06/first-blog/">
@@ -135,7 +137,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -148,6 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown-%E8%AF%AD%E6%B3%95%E6%80%BB%E7%BB%93"><span class="nav-number">1.</span> <span class="nav-text">markdown 语法总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%AC%A6%E5%8F%B7"><span class="nav-number">1.1.</span> <span class="nav-text">基本符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E9%A2%98"><span class="nav-number">1.2.</span> <span class="nav-text">标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%97%E8%A1%A8"><span class="nav-number">1.3.</span> <span class="nav-text">列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">1.5.</span> <span class="nav-text">代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">1.6.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="nav-number">1.7.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%89%B2%E7%BA%BF"><span class="nav-number">1.8.</span> <span class="nav-text">分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E4%BD%93"><span class="nav-number">1.9.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">1.10.</span> <span class="nav-text">表格</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,10 +226,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-04-06 22:47:51 / 修改时间：22:54:32" itemprop="dateCreated datePublished" datetime="2021-04-06T22:47:51+08:00">2021-04-06</time>
+      <time title="创建时间：2021-04-06 22:47:51" itemprop="dateCreated datePublished" datetime="2021-04-06T22:47:51+08:00">2021-04-06</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-04-08 21:14:47" itemprop="dateModified" datetime="2021-04-08T21:14:47+08:00">2021-04-08</time>
+      </span>
 
   
 </div>
@@ -238,7 +247,56 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>#🎉️ 🎉️</p>
+        <h1 id="markdown-语法总结"><a href="#markdown-语法总结" class="headerlink" title="markdown 语法总结"></a>markdown 语法总结</h1><h2 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h2><p>如果以基本符号* - +. &gt;开头的标记，注意基本符号后有一个用于分割标记符和内容的空格。</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>h1-h6</p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul>
+<hr>
+<ol>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+</ol>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
+<p>引用1</p>
+<blockquote>
+<p>引用2</p>
+</blockquote>
+</blockquote>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p><code>print(&quot;%s&quot;,&quot;sss&quot;)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for i &#x3D; a[1:12:1]</span><br><span class="line">		print(i)</span><br></pre></td></tr></table></figure>
+
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a target="_blank" rel="noopener" href="https://www.baidu.com/" title="everything">百度</a>,<br>行内式</p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img src="https://img-blog.csdnimg.cn/img_convert/ff5865a008004b32e8406d3d2a293eaf.png" alt="mylogo.png" title="aaa"></p>
+<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><ul>
+<li>* - _</li>
+</ul>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><ul>
+<li>强调<br><em>md</em><br><strong>md</strong></li>
+<li>删除线<br><del>删除</del></li>
+</ul>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table>
+<thead>
+<tr>
+<th align="left">111</th>
+<th align="center">222</th>
+<th align="right">333</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">aaa</td>
+<td align="center">bbb</td>
+<td align="right">ccc</td>
+</tr>
+<tr>
+<td align="left">123</td>
+<td align="center">234</td>
+<td align="right">345</td>
+</tr>
+</tbody></table>
 
     </div>
 
