@@ -128,14 +128,14 @@
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
         <li class="menu-item menu-item-archives">
 
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
 
   </li>
   </ul>
@@ -294,6 +294,12 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
@@ -302,9 +308,6 @@
       </span>
       <span class="links-of-author-item">
         <a href="mailto:2831419633@qq.com" title="E-Mail → mailto:2831419633@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://wx.qq.com/" title="Weixin(wjwroyal1228) → https:&#x2F;&#x2F;wx.qq.com&#x2F;" rel="noopener" target="_blank"><i class="fab fa-weixin fa-fw"></i>Weixin(wjwroyal1228)</a>
       </span>
   </div>
 
@@ -409,7 +412,39 @@
 
   
 
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'PgPNM1leGyBrdgdWdv2Ybo1T-MdYXbMMI',
+      appKey     : 'txaigXynk1qBmN4JBlDXcvuj',
+      placeholder: "（o´・ェ・｀o）说点什么咯",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
   
 </body>
 </html>
 
+
+<!-- 页面点击心形 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>
