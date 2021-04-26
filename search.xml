@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>c/c++</title>
+    <url>/2021/04/12/c/</url>
+    <content><![CDATA[<h1 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp"></a>strcmp</h1><p>‘’被称为字符文字，并且是标量整数类型。</p>
+<p>“”被称为字符串文字，并且是数组类型。请注意，数组会衰减到指针</p>
+<p><code>s[0]==&quot;\n&quot;</code></p>
+<p><code>warning: comparison between pointer and integer</code></p>
+<p>因此，您可以比较两个字符:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">str[0] &#x3D;&#x3D; &#39;)&#39;</span><br></pre></td></tr></table></figure>
+
+<p>或者您可以比较两个字符串</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">strcmp(str, &quot;)&quot;) &#x3D;&#x3D; 0</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>杂</category>
+      </categories>
+      <tags>
+        <tag>杂</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown 语法总结</title>
-    <url>/2021/04/06/first-blog/</url>
+    <url>/2021/04/06/markdown/</url>
     <content><![CDATA[<h1 id="markdown-语法总结"><a href="#markdown-语法总结" class="headerlink" title="markdown 语法总结"></a>markdown 语法总结</h1><h2 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h2><p>如果以基本符号* - +. &gt;开头的标记，注意基本符号后有一个用于分割标记符和内容的空格。</p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>h1-h6</p>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
@@ -55,6 +75,26 @@
 </tbody></table>
 ]]></content>
       <categories>
+        <category>杂</category>
+      </categories>
+      <tags>
+        <tag>杂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>style</title>
+    <url>/2021/04/11/style/</url>
+    <content><![CDATA[<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型:"></a>盒模型:</h1><p>块级元素–垂直布局;行内–水平;</p>
+<p>基本的布局:</p>
+<p><code>display:inline | block | inline-block</code></p>
+<p>高级:</p>
+<p><code>clear、float</code>(沦陷与抗浮动)</p>
+<p>实现垂直环绕布局(float变水平and环绕,clear恢复垂直)</p>
+<p><strong>浮动元素的重叠问题</strong></p>
+<p>浮动元素不会覆盖文字内容<br>浮动元素不会覆盖图片内容<br>（因为图片本身也属于文本，可以图片看做是一个特殊的文字）<br>浮动元素不会覆盖表单元素<br>（输入框、单选按钮、复选框、按钮、下拉选择框等）</p>
+<p><em>浮动元素只是提升了一点点的块优先级,可以覆盖块,但不能覆盖其他.</em></p>
+]]></content>
+      <categories>
         <category>前端</category>
       </categories>
       <tags>
@@ -63,122 +103,18 @@
   </entry>
   <entry>
     <title>Hexo 使用手册</title>
-    <url>/2021/04/10/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <url>/2021/04/10/%E6%9D%82/hexo/</url>
+    <content><![CDATA[<hr>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>hexo new My New Post</p>
+<p>hexo server(s)</p>
+<p>hexo generate(产生静态文件)</p>
+<p>hexo deploy(部署到远程服务器)</p>
 ]]></content>
       <categories>
         <category>杂</category>
       </categories>
       <tags>
         <tag>杂</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>css</title>
-    <url>/2021/04/10/css/</url>
-    <content><![CDATA[<h1 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h1><h2 id="静态伪类与动态伪类"><a href="#静态伪类与动态伪类" class="headerlink" title="静态伪类与动态伪类"></a>静态伪类与动态伪类</h2><h2 id="超链接-a-标签"><a href="#超链接-a-标签" class="headerlink" title="超链接 a 标签"></a>超链接 a 标签</h2><ul>
-<li><code>:link</code></li>
-<li><code>:visited</code></li>
-<li><code>:hover</code></li>
-<li><code>:active</code></li>
-</ul>
-<h2 id="标签（input-label等）"><a href="#标签（input-label等）" class="headerlink" title="标签（input label等）"></a>标签（input label等）</h2><ul>
-<li><code>:hover</code></li>
-<li><code>:active</code></li>
-<li><code>:focus</code></li>
-</ul>
-<hr>
-<h1 id="样式表的继承性与层叠性"><a href="#样式表的继承性与层叠性" class="headerlink" title="样式表的继承性与层叠性"></a>样式表的继承性与层叠性</h1><h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h2><p><strong>（继承性只看重继承结构，并不在意直接or间接的后代关系）</strong></p>
-<ul>
-<li>文字样式(color\text-\line-\font-)</li>
-<li>盒子、定位、布局（border: 2px solid red;)</li>
-</ul>
-<h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><p><img src="https://img-blog.csdnimg.cn/20210321121733981.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ1NzM4MDc3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
-<h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2><p>!important 提升属性<br>无法提升继承的权重为0，也就不影响就近原则。</p>
-<hr>
-<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h1><ol>
-<li>div span a</li>
-<li>真实占有宽度=border+padding+width</li>
-<li>小属性层叠大属性 or 大属性层叠小属性（就近原则）<br>(上 右 下 左）</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">padding: 20px;</span><br><span class="line">padding-left: 30px;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>默认padding及其清除（ub li or tb tr td）</li>
-<li>border：<ul>
-<li>像素 线型 (颜色) eg. border: 2px solid red;</li>
-<li>border-top:\border-width:\border-style:\border-color:</li>
-<li>小属性覆盖大属性</li>
-<li>eg.</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.div1&#123;</span><br><span class="line">width: 0;</span><br><span class="line">height: 0;</span><br><span class="line">border-top: 30px solid red;</span><br><span class="line">border-left: 20px solid tarnsparent;</span><br><span class="line">border-right: 20px solid transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>border 只能决定其宽度 长度由其他的border决定</strong><br><strong>border 交接处均分</strong></p>
-<hr>
-<h1 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h1><ol>
-<li><p>标准文档流</p>
-<ul>
-<li>空白折叠</li>
-<li>高矮不齐，底边对齐</li>
-<li>自动换行</li>
-</ul>
-</li>
-<li><p>行内元素与块级元素</p>
-<ul>
-<li>能否设置行高与行宽（width与height）</li>
-<li>行内：span a b i(italic) em u</li>
-<li>块级：div h li（ul） dt dd（dl）<br><code> p是文本级标签（无法放h与ul、p) 但是是块级元素</code></li>
-<li>display: block; AND display: inline;</li>
-</ul>
-</li>
-<li><p>float:left\right;</p>
-</li>
-<li><p>清除</p>
-<ul>
-<li>祖先盒子增加高度</li>
-<li>clear：both（但是无margin–无法被浮动内容撑高 无内容）</li>
-<li>隔墙法 设置height</li>
-<li>内墙法</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">	&lt;p&gt;&lt;&#x2F;p&gt;</span><br><span class="line">	&lt;p&gt;&lt;&#x2F;p&gt;</span><br><span class="line">	&lt;div class&#x3D;&quot;cl&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>overflow:hidden用于父亲</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在ul的li中出现浮动的span or div</span><br><span class="line">外墙法浪费li语义（li墙）</span><br><span class="line">内墙法（span墙）</span><br><span class="line">直接在li中用overflow:hidden</span><br></pre></td></tr></table></figure></li>
-<li><p>margin（兄弟之间）padding(父子之间距离）</p>
-</li>
-</ol>
-<hr>
-<h1 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h1><h2 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h2><p>微调 and 子绝父相<br>left 左移</p>
-<h2 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h2><p>脱标<br>top 页面左上角 bottom 首屏窗口左下角<br><strong>子绝父相（压盖）</strong></p>
-<ul>
-<li>父亲可以是最近的已经定位</li>
-<li>子绝无视父的padding</li>
-</ul>
-<p>标准流居中：<code>margin：0 auto；</code><br>绝对定位：<code>left: 50%;margin-left:-宽度的一半</code></p>
-<p>==margin为移动 padding为收缩==</p>
-<h2 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h2><p>相对浏览器窗口<br>z-index 定位使用 从父现象</p>
-<hr>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
       </tags>
   </entry>
 </search>
