@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo 使用手册</title>
-    <url>/2021/04/10/%E6%9D%82/hexo/</url>
-    <content><![CDATA[<hr>
-<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>hexo new My New Post</p>
-<p>hexo server(s)</p>
-<p>hexo generate(产生静态文件)</p>
-<p>hexo deploy(部署到远程服务器)</p>
-]]></content>
-      <categories>
-        <category>杂</category>
-      </categories>
-      <tags>
-        <tag>杂</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>c/c++</title>
     <url>/2021/04/12/coding/c/</url>
     <content><![CDATA[<h1 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp"></a>strcmp</h1><p>‘’被称为字符文字，并且是标量整数类型。</p>
@@ -30,57 +14,31 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">strcmp(str, &quot;)&quot;) &#x3D;&#x3D; 0</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>杂</category>
+        <category>coding</category>
       </categories>
       <tags>
-        <tag>杂</tag>
+        <tag>c++/c</tag>
       </tags>
   </entry>
   <entry>
-    <title>mysql</title>
-    <url>/2021/04/29/%E9%85%8D%E7%BD%AE/mysql/</url>
-    <content><![CDATA[<h2 id="mysql的配置-已经下载好xmapp"><a href="#mysql的配置-已经下载好xmapp" class="headerlink" title="mysql的配置(已经下载好xmapp):"></a>mysql的配置(已经下载好xmapp):</h2><p>由于xmapp自带了mysql组件(虽然是mariaDB),直接添加路径(bin)即可:</p>
-<p><img src="https://raw.githubusercontent.com/wjw136/mytypora/master/img/image-20210429115825887.png" alt="image-20210429115825887"></p>
-<p>通过管理员的命令行,进行用户的创建,密码的设置等:</p>
-<img src="https://raw.githubusercontent.com/wjw136/mytypora/master/img/3.png" alt="3" style="zoom: 33%;" />
-
-<p>用命令行进入用户,还能查看对应的数据库:</p>
-<img src="https://raw.githubusercontent.com/wjw136/mytypora/master/img/image-20210429122729941.png" alt="image-20210429122729941" style="zoom: 33%;" />
-
-<img src="https://raw.githubusercontent.com/wjw136/mytypora/master/img/image-20210429122700307.png" alt="image-20210429122700307" style="zoom: 33%;" />
-
-<h2 id="连接premium"><a href="#连接premium" class="headerlink" title="连接premium"></a>连接premium</h2><p><a href="https://www.cnblogs.com/sq1995liu/p/12671331.html">https://www.cnblogs.com/sq1995liu/p/12671331.html</a></p>
+    <title>Hexo 使用手册</title>
+    <url>/2021/04/10/reference/hexo/</url>
+    <content><![CDATA[<hr>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>hexo new My New Post</p>
+<p>hexo server(s)</p>
+<p>hexo generate(产生静态文件)</p>
+<p>hexo deploy(部署到远程服务器)</p>
 ]]></content>
       <categories>
-        <category>配置</category>
+        <category>reference</category>
       </categories>
       <tags>
-        <tag>configure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>style</title>
-    <url>/2021/04/11/qd/style/</url>
-    <content><![CDATA[<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型:"></a>盒模型:</h1><p>块级元素–垂直布局;行内–水平;</p>
-<p>基本的布局:</p>
-<p><code>display:inline | block | inline-block</code></p>
-<p>高级:</p>
-<p><code>clear、float</code>(沦陷与抗浮动)</p>
-<p>实现垂直环绕布局(float变水平and环绕,clear恢复垂直)</p>
-<p><strong>浮动元素的重叠问题</strong></p>
-<p>浮动元素不会覆盖文字内容<br>浮动元素不会覆盖图片内容<br>（因为图片本身也属于文本，可以图片看做是一个特殊的文字）<br>浮动元素不会覆盖表单元素<br>（输入框、单选按钮、复选框、按钮、下拉选择框等）</p>
-<p><em>浮动元素只是提升了一点点的块优先级,可以覆盖块,但不能覆盖其他.</em></p>
-]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
     <title>markdown 语法总结</title>
-    <url>/2021/04/06/%E6%9D%82/markdown/</url>
+    <url>/2021/04/06/reference/markdown/</url>
     <content><![CDATA[<h1 id="markdown-语法总结"><a href="#markdown-语法总结" class="headerlink" title="markdown 语法总结"></a>markdown 语法总结</h1><h2 id="基本符号"><a href="#基本符号" class="headerlink" title="基本符号"></a>基本符号</h2><p>如果以基本符号* - +. &gt;开头的标记，注意基本符号后有一个用于分割标记符和内容的空格。</p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>h1-h6</p>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ul>
@@ -133,15 +91,57 @@
 </tbody></table>
 ]]></content>
       <categories>
-        <category>杂</category>
+        <category>reference</category>
       </categories>
       <tags>
-        <tag>杂</tag>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>style</title>
+    <url>/2021/04/11/coding/qd/style/</url>
+    <content><![CDATA[<h1 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型:"></a>盒模型:</h1><p>块级元素–垂直布局;行内–水平;</p>
+<p>基本的布局:</p>
+<p><code>display:inline | block | inline-block</code></p>
+<p>高级:</p>
+<p><code>clear、float</code>(沦陷与抗浮动)</p>
+<p>实现垂直环绕布局(float变水平and环绕,clear恢复垂直)</p>
+<p><strong>浮动元素的重叠问题</strong></p>
+<p>浮动元素不会覆盖文字内容<br>浮动元素不会覆盖图片内容<br>（因为图片本身也属于文本，可以图片看做是一个特殊的文字）<br>浮动元素不会覆盖表单元素<br>（输入框、单选按钮、复选框、按钮、下拉选择框等）</p>
+<p><em>浮动元素只是提升了一点点的块优先级,可以覆盖块,但不能覆盖其他.</em></p>
+]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>web front</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql</title>
+    <url>/2021/04/29/reference/%E9%85%8D%E7%BD%AE/mysql/</url>
+    <content><![CDATA[<h2 id="mysql的配置-已经下载好xmapp"><a href="#mysql的配置-已经下载好xmapp" class="headerlink" title="mysql的配置(已经下载好xmapp):"></a>mysql的配置(已经下载好xmapp):</h2><p>由于xmapp自带了mysql组件(虽然是mariaDB),直接添加路径(bin)即可:</p>
+<p><img src="https://raw.githubusercontent.com/wjw136/mytypora/master/img/image-20210429115825887.png" alt="image-20210429115825887"></p>
+<p>通过管理员的命令行,进行用户的创建,密码的设置等:</p>
+<img src="https://raw.githubusercontent.com/wjw136/mytypora/master/img/3.png" alt="3" style="zoom: 33%;" />
+
+<p>用命令行进入用户,还能查看对应的数据库:</p>
+<img src="https://raw.githubusercontent.com/wjw136/mytypora/master/img/image-20210429122729941.png" alt="image-20210429122729941" style="zoom: 33%;" />
+
+<img src="https://raw.githubusercontent.com/wjw136/mytypora/master/img/image-20210429122700307.png" alt="image-20210429122700307" style="zoom: 33%;" />
+
+<h2 id="连接premium"><a href="#连接premium" class="headerlink" title="连接premium"></a>连接premium</h2><p><a href="https://www.cnblogs.com/sq1995liu/p/12671331.html">https://www.cnblogs.com/sq1995liu/p/12671331.html</a></p>
+]]></content>
+      <categories>
+        <category>reference</category>
+      </categories>
+      <tags>
+        <tag>configure</tag>
       </tags>
   </entry>
   <entry>
     <title>typora</title>
-    <url>/2021/04/29/%E9%85%8D%E7%BD%AE/typora/</url>
+    <url>/2021/04/29/reference/%E9%85%8D%E7%BD%AE/typora/</url>
     <content><![CDATA[<h2 id="typora配置-图片上传"><a href="#typora配置-图片上传" class="headerlink" title="typora配置(图片上传)"></a>typora配置(图片上传)</h2><ul>
 <li>github 创建仓库–mytypora/img/</li>
 <li>获取对应的令牌(token):</li>
@@ -160,10 +160,71 @@
 </ul>
 ]]></content>
       <categories>
-        <category>配置</category>
+        <category>reference</category>
       </categories>
       <tags>
         <tag>configure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java_linuxVM</title>
+    <url>/2021/05/03/reference/%E9%85%8D%E7%BD%AE/java-linuxVM/</url>
+    <content><![CDATA[<h1 id="Ubuntu-under-windows-install-java-jdk"><a href="#Ubuntu-under-windows-install-java-jdk" class="headerlink" title="Ubuntu under windows install java jdk:"></a>Ubuntu under windows install java jdk:</h1><ol>
+<li><p>(<a href="https://www.oracle.com/java/technologies/javase-jdk16-downloads.html">https://www.oracle.com/java/technologies/javase-jdk16-downloads.html</a>)</p>
+<p>下载在linux对应的x86版本的jdk 到windows文件系统中(“E:\linux\jdk-16.0.1_linux-x64_bin.tar.gz”)</p>
+</li>
+<li><p>bash进入linux子系统, 利用cp jdk-16.0.1_linux-x64_bin.tar.gz /home/java拷贝到linux系统中去.</p>
+<p>(linux子系统存在于windows系统中的</p>
+<p>C:\Users\ASUS\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\rootfs)</p>
+</li>
+<li><p>tar zxvf jdk-16.0.1_linux-x64_bin.tar.gz解压文件夹</p>
+</li>
+<li><p>vim /etc/profile vim模式编辑profile问价添加路径</p>
+<p><code>JAVA_HOME=/home/java/jdk-16.0.1</code><br><code>JRE_HOME=$JAVA_HOME/jre</code><br><code>export JAVA_HOME</code><br><code>export JRE_HOME</code><br><code>export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</code><br><code>export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</code><br><code>ln -s /home/java/jdk1.8.0_261/bin/java /usr/bin/java</code></p>
+</li>
+<li><p>source /etc/profile 生效</p>
+</li>
+<li><p>java -version 验证</p>
+<h2 id="linux-的命令"><a href="#linux-的命令" class="headerlink" title="linux 的命令"></a>linux 的命令</h2></li>
+</ol>
+<ol>
+<li><p>cd /home(从根目录开始改变)</p>
+<p>cd \java(进入下一级文件)</p>
+<p>cd ../</p>
+<p>cd xxx\ (next line)</p>
+</li>
+<li><p>tar.gz 文件的解压:</p>
+<p>tar -zxfv xxx.tar.gz</p>
+</li>
+</ol>
+<pre><code>  | 参数 | 解释                                                                         |
+  | ------ | :----------------------------------------------------------------------------- |
+  | z    | 通过gzip支持的压缩或解压缩。还有其他的压缩或解压缩方式，比如j表示bzip2的方式 |
+  | x    | 解压缩                                                                       |
+  | v    | 在压缩或解压缩过程中显示正在处理的文件名                                     |
+  | f    | f后面必须跟上要处理的文件名.                                                 |
+</code></pre>
+<ol start="3">
+<li><p>ls和ll:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls /etc</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls  -a</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ls -ltr</span><br></pre></td></tr></table></figure>
+<p><code>ll=ls -la</code></p>
+</li>
+</ol>
+<h1 id="vim模式编辑"><a href="#vim模式编辑" class="headerlink" title="vim模式编辑"></a>vim模式编辑</h1><ol>
+<li>vim file 进入vim模式</li>
+<li>i a o 进入编辑模式(光标 前,后,后一行)</li>
+<li>esc 退出为普通模式</li>
+<li>普通模式的:wq(保存并退出)</li>
+<li>~游标无内容</li>
+</ol>
+]]></content>
+      <categories>
+        <category>reference</category>
+      </categories>
+      <tags>
+        <tag>-configure</tag>
       </tags>
   </entry>
 </search>
