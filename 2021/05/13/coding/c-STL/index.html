@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-falsh.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":250,"display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="STL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++_STL">
+<meta property="og:url" content="http://example.com/2021/05/13/coding/c-STL/index.html">
+<meta property="og:site_name" content="william的杂货店">
+<meta property="og:description" content="STL">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-13T03:46:21.000Z">
+<meta property="article:modified_time" content="2021-05-19T11:43:59.653Z">
+<meta property="article:author" content="william(wjw)">
+<meta property="article:tag" content="c++&#x2F;c">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/05/13/coding/c-STL/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>c++_STL | william的杂货店</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">william的杂货店</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">贩卖黄昏 自由 以及爱(aka William from SCUT)</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/13/coding/c-STL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo.jpg">
+      <meta itemprop="name" content="william(wjw)">
+      <meta itemprop="description" content="个人blog网站">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="william的杂货店">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          c++_STL
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-13 11:46:21" itemprop="dateCreated datePublished" datetime="2021-05-13T11:46:21+08:00">2021-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-19 19:43:59" itemprop="dateModified" datetime="2021-05-19T19:43:59+08:00">2021-05-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/05/13/coding/c-STL/" class="post-meta-item leancloud_visitors" data-flag-title="c++_STL" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/05/13/coding/c-STL/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/05/13/coding/c-STL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">STL</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="map的key-同理-set"><a href="#map的key-同理-set" class="headerlink" title="map的key(同理 set)"></a>map的key(同理 set)</h3><p>内部实现–红黑树(对key进行hash, 再进行RB-tree存储)</p>
+<p>要求key值comparable</p>
+<ol>
+<li><p>string int等基本类型</p>
+</li>
+<li><p>自定义类型:<br>(严格弱比较 严格是说在判断的时候会用”&lt;”，而不是”&lt;=”，弱排序是因为，一旦”&lt;”成立便认为存在”&lt;”关系，返回ture，而忽略了”=”关系和”&gt;”区别，把它们归结为false)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    string b;</span><br><span class="line">    <span class="built_in">EE</span>(<span class="keyword">int</span> a)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;a = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> EE &amp;b) <span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//严格弱比较 严格是说在判断的时候会用&quot;&lt;&quot;，而不是&quot;&lt;=&quot;，弱排序是因为，一旦&quot;&lt;&quot;成立便认为存在&quot;&lt;&quot;关系，返回ture，而忽略了&quot;=&quot;关系和&quot;&gt;&quot;区别，把它们归结为false。</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>-&gt;a &lt; b.a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;:111&quot;</span> &lt;&lt; endl;</span><br><span class="line">    map&lt;EE, string&gt; test_set;</span><br><span class="line">    test_set[<span class="built_in">EE</span>(<span class="number">4</span>)] = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">    test_set[<span class="built_in">EE</span>(<span class="number">3</span>)] = <span class="string">&quot;2&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i : test_set)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; i.first.a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; i.second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>map的count使用的等于比较的时候是根据重载的小于运算符:</strong></p>
+<p>重载小于运算符 比较量的选取!!!—-(hash值)</p>
+<h3 id="hash-map"><a href="#hash-map" class="headerlink" title="hash map"></a>hash map</h3><p><strong>hash_map和map的区别在哪里？</strong></p>
+<ul>
+<li>构造函数。hash_map需要hash函数，等于函数；map只需要比较函数(小于函数).</li>
+<li>存储结构。hash_map采用hash表存储，map一般采用<a target="_blank" rel="noopener" href="http://stl.winterxy.com/html/000039.html">红黑树(RB Tree)</a>实现。因此其memory数据结构是不一样的。</li>
+</ul>
+<p><strong>什么时候需要用hash_map，什么时候需要用map?</strong></p>
+<p>总体来说，hash_map 查找速度会比map快，而且查找速度基本和数据数据量大小，属于常数级别;而map的查找速度是log(n)级别。并不一定常数就比log(n)小，hash还有hash函数的耗时，明白了吧，如果你考虑效率，特别是在元素达到一定数量级时，考虑考虑hash_map。但若你对内存使用特别严格，希望程序尽可能少消耗内存，那么一定要小心，hash_map可能会让你陷入尴尬，特别是当你的hash_map对象特别多时，你就更无法控制了，而且hash_map的构造速度较慢。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassA</span>&#123;</span></span><br><span class="line">        <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">ClassA</span>(<span class="keyword">int</span> a):<span class="built_in">c_a</span>(a)&#123;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getvalue</span><span class="params">()</span><span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> c_a;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">setvalue</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;c_a;&#125;</span><br><span class="line">        <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> c_a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1 define the hash function</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">hash_A</span>&#123;</span></span><br><span class="line">        <span class="function"><span class="keyword">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> class ClassA &amp; A)</span><span class="keyword">const</span></span>&#123;</span><br><span class="line">                <span class="comment">//  return  hash&lt;int&gt;(classA.getvalue());</span></span><br><span class="line">                <span class="keyword">return</span> A.<span class="built_in">getvalue</span>();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2 define the equal function</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">equal_A</span>&#123;</span></span><br><span class="line">        <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> class ClassA &amp; a1, <span class="keyword">const</span> class ClassA &amp; a2)</span><span class="keyword">const</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span>  a1.<span class="built_in">getvalue</span>() == a2.<span class="built_in">getvalue</span>();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        hash_map&lt;ClassA, string, hash_A, equal_A&gt; hmap;</span><br><span class="line">        <span class="function">ClassA <span class="title">a1</span><span class="params">(<span class="number">12</span>)</span></span>;</span><br><span class="line">        hmap[a1]=<span class="string">&quot;I am 12&quot;</span>;</span><br><span class="line">        <span class="function">ClassA <span class="title">a2</span><span class="params">(<span class="number">198877</span>)</span></span>;</span><br><span class="line">        hmap[a2]=<span class="string">&quot;I am 198877&quot;</span>;</span><br><span class="line">  </span><br><span class="line">        cout&lt;&lt;hmap[a1]&lt;&lt;endl;</span><br><span class="line">        cout&lt;&lt;hmap[a2]&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="嵌套数据结构的初始化"><a href="#嵌套数据结构的初始化" class="headerlink" title="嵌套数据结构的初始化:"></a>嵌套数据结构的初始化:</h3><p><code>vectormap&lt;string,&gt; LR_table;</code></p>
+<p>每次调用前记得初始化:</p>
+<p><code>LR_table.push_back(mapstring,action());</code></p>
+<p>…</p>
+<h3 id="hash函数-vector-lt-gt"><a href="#hash函数-vector-lt-gt" class="headerlink" title="hash函数(vector&lt;&gt;)"></a>hash函数(vector&lt;&gt;)</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Items</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;Item&gt; items;</span><br><span class="line">    <span class="comment">//int t;</span></span><br><span class="line">    <span class="built_in">Items</span>()</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">size_t</span> <span class="title">myHash</span><span class="params">(std::vector&lt;Item&gt; <span class="keyword">const</span> &amp;vec)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        std::<span class="keyword">size_t</span> seed = vec.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i : vec)</span><br><span class="line">        &#123;</span><br><span class="line">            seed ^= i.index + <span class="number">0x9e3779b9</span> + (seed &lt;&lt; <span class="number">6</span>) + (seed &gt;&gt; <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> seed;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Items &amp;a) <span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">myHash</span>(<span class="keyword">this</span>-&gt;items) &lt; <span class="built_in">myHash</span>(a.items);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><ul>
+<li>《C++ primer》上说 vector 中不能存放引用的原因是：****引用不支持一般意义上的赋值操作****，而 vector中元素的两个要求是：</li>
+</ul>
+<p>１.元素必须能赋值</p>
+<p>２.元素必须能复制</p>
+<ul>
+<li><p>存指针:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;string*&gt; vect;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/pay.jpg" alt="william(wjw) 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c++/c</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/08/coding/csharp/" rel="prev" title="csharp">
+      <i class="fa fa-chevron-left"></i> csharp
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#map%E7%9A%84key-%E5%90%8C%E7%90%86-set"><span class="nav-number">1.</span> <span class="nav-text">map的key(同理 set)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash-map"><span class="nav-number">2.</span> <span class="nav-text">hash map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B5%8C%E5%A5%97%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">嵌套数据结构的初始化:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hash%E5%87%BD%E6%95%B0-vector-lt-gt"><span class="nav-number">4.</span> <span class="nav-text">hash函数(vector&lt;&gt;)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector"><span class="nav-number">5.</span> <span class="nav-text">vector</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="william(wjw)"
+      src="/images/logo.jpg">
+  <p class="site-author-name" itemprop="name">william(wjw)</p>
+  <div class="site-description" itemprop="description">个人blog网站</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wjw136" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wjw136" rel="noopener" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2831419633@qq.com" title="E-Mail → mailto:2831419633@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">william(wjw)</span>
+</div>
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+-->
+
+        <div>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            <script>
+                var now = new Date();
+                function createtime() {
+                    var grt= new Date("04/08/2021 00:00:00");
+                    now.setTime(now.getTime()+250);
+                    days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+                    hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+                    if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+                    seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+                    document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                }
+            setInterval("createtime()",250);
+            </script>
+        </div>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+  
+  
+  <script color='255,0,0' opacity='2' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'PgPNM1leGyBrdgdWdv2Ybo1T-MdYXbMMI',
+      appKey     : 'txaigXynk1qBmN4JBlDXcvuj',
+      placeholder: "（o´・ェ・｀o）说点什么咯",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  
+</body>
+</html>
+
+
+<!-- 页面点击心形 -->
+<script type="text/javascript" src="/js/clicklove.js"></script>

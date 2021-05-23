@@ -89,6 +89,17 @@
 
 <p>或者您可以比较两个字符串</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">strcmp(str, &quot;)&quot;) &#x3D;&#x3D; 0</span><br></pre></td></tr></table></figure>
+
+<h2 id="类成员的访问权限"><a href="#类成员的访问权限" class="headerlink" title="类成员的访问权限"></a>类成员的访问权限</h2><p>在c++中，类（class）的所有成员的默认访问权限是私有（private），而结构（struct）的所有成员的默认访问权限是公共（public）。</p>
+<h2 id="c-构造函数"><a href="#c-构造函数" class="headerlink" title="c++构造函数"></a>c++构造函数</h2><p>c++自定义类的时候 重载构造函数, 要保证缺省构造函数的存在(报错???):</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Action</span>(<span class="keyword">bool</span> a=<span class="number">0</span>, <span class="keyword">int</span> b=<span class="number">0</span>, <span class="keyword">int</span> c=<span class="number">0</span>, <span class="keyword">int</span> d=<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">    acc = a;</span><br><span class="line">    type = b;</span><br><span class="line">    nxt = c;</span><br><span class="line">    rindex = d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="多态函数调用"><a href="#多态函数调用" class="headerlink" title="多态函数调用"></a>多态函数调用</h2><p>多态。 如果说父类中有这个属性跟方法，子类有重写过，那么调用的是子类中的属性跟方法。 如果父类中没有这个属性跟方法，那么子类调用就会出错。 如果父类有这个属性跟方法，而子类没有，则调用的是父类的属性跟方法。</p>
+<p>因此要利用虚函数进行多态父引用调用子类函数.</p>
+<p>不存在从父类到子类的类型转换(反之即可)</p>
+<p>!!!!!构成多态必须虚函数+<strong>引用or指针</strong>(防止调用基类的复制构造函数)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(Person&amp; obj)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">obj.<span class="built_in">BuyTicket</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">Person p;</span><br><span class="line">Child c;</span><br><span class="line"></span><br><span class="line"><span class="built_in">fun</span>(p);</span><br><span class="line"><span class="built_in">fun</span>(c);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>coding</category>
@@ -226,5 +237,64 @@
       <tags>
         <tag>web front</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>c++_STL</title>
+    <url>/2021/05/13/coding/c-STL/</url>
+    <content><![CDATA[<h3 id="map的key-同理-set"><a href="#map的key-同理-set" class="headerlink" title="map的key(同理 set)"></a>map的key(同理 set)</h3><p>内部实现–红黑树(对key进行hash, 再进行RB-tree存储)</p>
+<p>要求key值comparable</p>
+<ol>
+<li><p>string int等基本类型</p>
+</li>
+<li><p>自定义类型:<br>(严格弱比较 严格是说在判断的时候会用”&lt;”，而不是”&lt;=”，弱排序是因为，一旦”&lt;”成立便认为存在”&lt;”关系，返回ture，而忽略了”=”关系和”&gt;”区别，把它们归结为false)</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EE</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    string b;</span><br><span class="line">    <span class="built_in">EE</span>(<span class="keyword">int</span> a)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;a = a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> EE &amp;b) <span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//严格弱比较 严格是说在判断的时候会用&quot;&lt;&quot;，而不是&quot;&lt;=&quot;，弱排序是因为，一旦&quot;&lt;&quot;成立便认为存在&quot;&lt;&quot;关系，返回ture，而忽略了&quot;=&quot;关系和&quot;&gt;&quot;区别，把它们归结为false。</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>-&gt;a &lt; b.a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;:111&quot;</span> &lt;&lt; endl;</span><br><span class="line">    map&lt;EE, string&gt; test_set;</span><br><span class="line">    test_set[<span class="built_in">EE</span>(<span class="number">4</span>)] = <span class="string">&quot;1&quot;</span>;</span><br><span class="line">    test_set[<span class="built_in">EE</span>(<span class="number">3</span>)] = <span class="string">&quot;2&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i : test_set)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; i.first.a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; i.second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><strong>map的count使用的等于比较的时候是根据重载的小于运算符:</strong></p>
+<p>重载小于运算符 比较量的选取!!!—-(hash值)</p>
+<h3 id="hash-map"><a href="#hash-map" class="headerlink" title="hash map"></a>hash map</h3><p><strong>hash_map和map的区别在哪里？</strong></p>
+<ul>
+<li>构造函数。hash_map需要hash函数，等于函数；map只需要比较函数(小于函数).</li>
+<li>存储结构。hash_map采用hash表存储，map一般采用<a href="http://stl.winterxy.com/html/000039.html">红黑树(RB Tree)</a>实现。因此其memory数据结构是不一样的。</li>
+</ul>
+<p><strong>什么时候需要用hash_map，什么时候需要用map?</strong></p>
+<p>总体来说，hash_map 查找速度会比map快，而且查找速度基本和数据数据量大小，属于常数级别;而map的查找速度是log(n)级别。并不一定常数就比log(n)小，hash还有hash函数的耗时，明白了吧，如果你考虑效率，特别是在元素达到一定数量级时，考虑考虑hash_map。但若你对内存使用特别严格，希望程序尽可能少消耗内存，那么一定要小心，hash_map可能会让你陷入尴尬，特别是当你的hash_map对象特别多时，你就更无法控制了，而且hash_map的构造速度较慢。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassA</span>&#123;</span></span><br><span class="line">        <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">ClassA</span>(<span class="keyword">int</span> a):<span class="built_in">c_a</span>(a)&#123;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getvalue</span><span class="params">()</span><span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> c_a;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">setvalue</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;c_a;&#125;</span><br><span class="line">        <span class="keyword">private</span>:</span><br><span class="line">        <span class="keyword">int</span> c_a;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//1 define the hash function</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">hash_A</span>&#123;</span></span><br><span class="line">        <span class="function"><span class="keyword">size_t</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> class ClassA &amp; A)</span><span class="keyword">const</span></span>&#123;</span><br><span class="line">                <span class="comment">//  return  hash&lt;int&gt;(classA.getvalue());</span></span><br><span class="line">                <span class="keyword">return</span> A.<span class="built_in">getvalue</span>();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2 define the equal function</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">equal_A</span>&#123;</span></span><br><span class="line">        <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">const</span> class ClassA &amp; a1, <span class="keyword">const</span> class ClassA &amp; a2)</span><span class="keyword">const</span></span>&#123;</span><br><span class="line">                <span class="keyword">return</span>  a1.<span class="built_in">getvalue</span>() == a2.<span class="built_in">getvalue</span>();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        hash_map&lt;ClassA, string, hash_A, equal_A&gt; hmap;</span><br><span class="line">        <span class="function">ClassA <span class="title">a1</span><span class="params">(<span class="number">12</span>)</span></span>;</span><br><span class="line">        hmap[a1]=<span class="string">&quot;I am 12&quot;</span>;</span><br><span class="line">        <span class="function">ClassA <span class="title">a2</span><span class="params">(<span class="number">198877</span>)</span></span>;</span><br><span class="line">        hmap[a2]=<span class="string">&quot;I am 198877&quot;</span>;</span><br><span class="line">  </span><br><span class="line">        cout&lt;&lt;hmap[a1]&lt;&lt;endl;</span><br><span class="line">        cout&lt;&lt;hmap[a2]&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="嵌套数据结构的初始化"><a href="#嵌套数据结构的初始化" class="headerlink" title="嵌套数据结构的初始化:"></a>嵌套数据结构的初始化:</h3><p><code>vectormap&lt;string,&gt; LR_table;</code></p>
+<p>每次调用前记得初始化:</p>
+<p><code>LR_table.push_back(mapstring,action());</code></p>
+<p>…</p>
+<h3 id="hash函数-vector-lt-gt"><a href="#hash函数-vector-lt-gt" class="headerlink" title="hash函数(vector&lt;&gt;)"></a>hash函数(vector&lt;&gt;)</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Items</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;Item&gt; items;</span><br><span class="line">    <span class="comment">//int t;</span></span><br><span class="line">    <span class="built_in">Items</span>()</span><br><span class="line">    &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">size_t</span> <span class="title">myHash</span><span class="params">(std::vector&lt;Item&gt; <span class="keyword">const</span> &amp;vec)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        std::<span class="keyword">size_t</span> seed = vec.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i : vec)</span><br><span class="line">        &#123;</span><br><span class="line">            seed ^= i.index + <span class="number">0x9e3779b9</span> + (seed &lt;&lt; <span class="number">6</span>) + (seed &gt;&gt; <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> seed;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Items &amp;a) <span class="keyword">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">myHash</span>(<span class="keyword">this</span>-&gt;items) &lt; <span class="built_in">myHash</span>(a.items);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><ul>
+<li>《C++ primer》上说 vector 中不能存放引用的原因是：****引用不支持一般意义上的赋值操作****，而 vector中元素的两个要求是：</li>
+</ul>
+<p>１.元素必须能赋值</p>
+<p>２.元素必须能复制</p>
+<ul>
+<li><p>存指针:</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">vector&lt;string*&gt; vect;</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+      <categories>
+        <category>coding</category>
+      </categories>
+      <tags>
+        <tag>c++/c</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>csharp</title>
+    <url>/2021/05/08/coding/csharp/</url>
+    <content><![CDATA[<h3 id="默认访问权限"><a href="#默认访问权限" class="headerlink" title="默认访问权限"></a>默认访问权限</h3><p>1.在namespace中的类、接口默认是internal类型的，也可以显示的定义为public类型，不允许是其他访问类型。<br>2.在一个类里面，属性和方法默认是private的，可以显示的定义为public、private、protected、internal或protected internal等访问类型。<br>3.接口中不能定义成员变量，接口中的方法默认为public的访问权限，但是不能显示的定义任何访问类型。<br>4.抽象类中必须有一个以上的抽象方法，抽象方法可以是public、internal、protected,不能是private的访问类型。</p>
+<h3 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h3><p>默认初始化为null</p>
+<p>MyDatabase.f1 = new main_menu() <strong>修改f1的指向,并不修改原来f1指向的内容</strong></p>
+<h3 id="窗口显示"><a href="#窗口显示" class="headerlink" title="窗口显示"></a>窗口显示</h3><p>模态显示（showdialog）和非模态显示（show）。</p>
+<p>模态与非模态窗体的主要区别是窗体显示的时候是否可以操作其他窗体。模态窗体不允许操作其他窗体，非模态窗体可以操作其他窗体。</p>
+<p>以及能否继续执行下面的代码~</p>
+]]></content>
+      <categories>
+        <category>默认</category>
+      </categories>
   </entry>
 </search>
